@@ -1,0 +1,84 @@
+<table class="blueTable">
+    <thead>
+        <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Documento</th>
+            <th>Fecha Nacimiento</th>
+            <th>Usuario</th>
+            <th>Clave</th>
+            <th>Rol</th>
+            <th>Eliminar</th>
+            <th>Mostrar</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let persona of listaPersonas ">
+            <td>{{persona.nombres}}</td>
+            <td>{{persona.apellidos}}</td>
+            <td>{{persona.documento}}</td>
+            <td>{{persona.fechaNacimiento}}</td>
+            <td>{{persona.usuario}}</td>
+            <td>{{persona.clave}}</td>
+            <td>{{persona.rol}}</td>
+            <td>
+                <button (click)="eliminar(persona._id)">
+              <img height="20" src="../../../assets/img/delete.png"/>
+            </button>
+            </td>
+            <td><button (click)="mostrar(persona)">
+              <img height="20" src="../../../assets/img/edit.png"/>
+            </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr/>
+<table>
+    <tr>
+        <td>Nombres:</td>
+        <td><input name="nombres" type="text" [(ngModel)]="persona.nombres" /></td>
+    </tr>
+    <tr>
+        <td>Apellidos:</td>
+        <td><input name="apellidos" type="text" [(ngModel)]="persona.apellidos" /></td>
+    </tr>
+    <tr>
+        <td>Documento</td>
+        <td><input name="documento" type="text" [(ngModel)]="persona.documento" /></td>
+    </tr>
+    <tr>
+        <td>Fecha de Nacimiento</td>
+        <td><input name="fechaNacimiento" type="text" [(ngModel)]="persona.fechaNacimiento" /></td>
+    </tr>
+    <tr>
+        <td>Usuario</td>
+        <td><input name="usuario" type="text" [(ngModel)]="persona.usuario" /></td>
+    </tr>
+    <tr>
+        <td>Clave</td>
+        <td><input name="clave" type="text" [(ngModel)]="persona.clave" /></td>
+    </tr>
+    <tr>
+        <td>Rol</td>
+
+        <mat-radio-group [(ngModel)]="persona.rol">
+            <mat-radio-button value="PACIENTE">Paciente</mat-radio-button>
+            <mat-radio-button value="MEDICO">Medico</mat-radio-button>
+
+        </mat-radio-group>
+        <td>
+
+        </td>
+    </tr>
+
+    <hr />
+    <table>
+        <tr>
+            <td><button (click)="guardar()">Guardar</button></td>
+            <td><button (click)="listarPersonas()">Listar Personas</button></td>
+            <td><button (click)="limpiarFormulario()">Limpiar Formulario</button></td>
+        </tr>
+    </table>
+</table>

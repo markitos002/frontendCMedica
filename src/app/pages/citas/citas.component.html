@@ -1,0 +1,232 @@
+<h2>Citas Medicas >>>>>>>>>> Acceso al Medico ------ para asignar Agenda</h2>
+<table class="blueTable">
+    <thead>
+        <tr>
+            <th>Hora Inicio</th>
+            <th>Hora Fin</th>
+            <th>Fecha </th>
+            <th>Cancelacion</th>
+            <th>Eliminar</th>
+            <th>Mostrar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cita of listaCitas ">
+            <td>{{cita.horaInicio}}</td>
+            <td>{{cita.horaFin}}</td>
+            <td>{{cita.fecha}}</td>
+            <td>{{cita.cancelacion}}</td>
+            <td>
+                <button (click)="eliminar(cita._id)">
+            <img height="20" src="../../../assets/img/delete.png"/>
+          </button>
+            </td>
+            <td><button (click)="mostrar(cita)">
+            <img height="20" src="../../../assets/img/edit.png"/>
+          </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr/>
+
+<tr>
+    <td>Hora Inicio:</td>
+    <td><input name="horaInicio" type="text" [(ngModel)]="cita.horaInicio" /></td>
+</tr>
+<tr>
+    <td>Hora Fin:</td>
+    <td><input name="horaFin" type="text" [(ngModel)]="cita.horaFin" /></td>
+</tr>
+<tr>
+    <td>Fecha:</td>
+    <td><input name="fecha" type="text" [(ngModel)]="cita.fecha" /></td>
+</tr>
+<tr>
+    <td>Cancelacion</td>
+    <td><input name="cancelacion" type="text" [(ngModel)]="cita.cancelacion" /></td>
+</tr>
+<hr />
+<table>
+    <tr>
+        <td><button (click)="guardar()">Guardar</button></td>
+        <td><button (click)="listarCitas()">Listar Citas</button></td>
+        <td><button (click)="limpiarFormulario()">Limpiar Formulario</button></td>
+    </tr>
+</table>
+
+<hr/>
+
+
+
+<!--
+
+<h2>Seleccionar Medico</h2>
+
+<div class="form-group">
+    <label for="">Seleccionar especialidad</label>
+    <select class="form-control" id="" [(ngModel)]="cita.medico">
+        <option *ngFor="let medico of listaMedicos" [ngValue]="medico">{{medico.especialidad}}</option>
+        </select>
+
+    <button (click)="agregarMedico()">Agregar</button>
+    <hr/>
+
+
+
+
+</div>
+
+
+-->
+
+
+<!--
+    <select class="form-control" name="" id="" [(ngModel)]="Medico.documento">
+    <option *ngFor="let medico of listaMedicos" value="{{medico.documento}}">{{medico.nombre}}</option>
+
+
+<h3>Seleccionar Paciente</h3>
+
+<select class="form-control" name="" id="" [(ngModel)]="Paciente.documento">
+    <option *ngFor="let paciente of listaPacientes" value="{{paciente.documento}}">{{paciente.nombre}}</option>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    //
+
+    </table>
+    <table class="blueTable">
+        <thead>
+            <tr>
+                <th>Nombre </th>
+                <th>Apellido</th>
+                <th>Documento</th>
+                <th>Especialidad</th>
+                <th>Eliminar</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let Medico of listaMedicos ">
+                <td>{{Medico.nombre}}</td>
+                <td>{{Medico.apellido}}</td>
+                <td>{{Medico.documento}}</td>
+                <td>{{Medico.especialidad}}</td>
+                <td>
+                    <button (click)="eliminar(Medico.documento)">
+    <img height="20" src="../../../assets/img/eliminar.png"/>
+  </button>
+                </td>
+                <td><button (click)="mostrarMedico(Medico)">
+    <img height="20" src="../../../assets/img/edit.png"/>
+  </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tr>
+            <td>Nombre Medico:</td>
+            <td><input name="nombre" type="text" [(ngModel)]="Medico.nombre" /></td>
+        </tr>
+        <tr>
+            <td>Apellido Medico:</td>
+            <td><input name="apellido" type="text" [(ngModel)]="Medico.apellido" /></td>
+        </tr>
+        <tr>
+            <td>Documento Medico:</td>
+            <td><input name="documento" type="text" [(ngModel)]="Medico.documento" /></td>
+        </tr>
+        <tr>
+            <td>Especialidad Medico: </td>
+            <td><input name="especialidad" type="text" [(ngModel)]="Medico.especialidad" /></td>
+        </tr>
+        <hr />
+
+        <table>
+            <tr>
+                <td><button (click)="agregarMedico()">Agregar Medico</button></td>
+                <td><button (click)="limpiarFormulario()">Limpiar Formulario</button></td>
+            </tr>
+        </table>
+        <table class="blueTable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Documento</th>
+                    <th>Motivo Consulta</th>
+                    <th>Eliminar</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Paciente of listaPacientes ">
+                    <td>{{Paciente.nombre}}</td>
+                    <td>{{Paciente.apellido}}</td>
+                    <td>{{Paciente.documento}}</td>
+                    <td>{{Paciente.motivo}}</td>
+                    <button (click)="eliminar(Paciente.documento)">
+  <img height="20" src="../../../assets/img/eliminar.png"/>
+  </button>
+                    <td><button (click)="mostrarPaciente(Paciente)">
+  <img height="20" src="../../../assets/img/edit.png"/>
+</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <table>
+            <tr>
+                <td>Nombre Paciente:</td>
+                <td><input name="nombre" type="text" [(ngModel)]="Paciente.nombre" /></td>
+            </tr>
+            <tr>
+                <td>Apellido Paciente:</td>
+                <td><input name="apellido" type="text" [(ngModel)]="Paciente.apellido" /></td>
+            </tr>
+            <tr>
+                <td>Documento Paciente:</td>
+                <td><input name="documento" type="text" [(ngModel)]="Paciente.documento" /></td>
+            </tr>
+            <tr>
+                <td>Motivo Consulta: </td>
+                <td><input name="motivo" type="text" [(ngModel)]="Paciente.motivo" /></td>
+            </tr>
+            <hr />
+            <table>
+                <tr>
+                    <td><button (click)="agregarPaciente()">Agregar Paciente</button></td>
+                    <td><button (click)="limpiarFormulario()">Limpiar Formulario</button></td>
+                </tr>
+            </table>
+
+        -->
