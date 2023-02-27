@@ -8,7 +8,7 @@ import { PersonaTO } from '../../../interfaces/personasto.interface'; // importa
 })
 export class PersonasService {
 
-  url: string = 'https://backmedica.herokuapp.com/api/personas'; // url del backend, // se cambia por la direccion del heroku
+  url: string = 'https://proyect-cm1.onrender.com/api/personas'; // url del backend, // se cambia por la direccion del heroku
 
   constructor(private _http: HttpClient) { }
 

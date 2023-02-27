@@ -8,7 +8,7 @@ import { CitasTO } from '../../../interfaces/citasto.interface';
 })
 export class CitasService {
 
-  url: string = 'https://backmedica.herokuapp.com/api/citas';  // se cambia por la direccion del heroku
+  url: string = 'https://proyect-cm1.onrender.com/api/citas';  // se cambia por la direccion del heroku
 
   constructor(private _http: HttpClient) { }
 
