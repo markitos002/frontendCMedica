@@ -8,6 +8,9 @@ const routes: Routes = [  // se configuran las rutas principales
   {  path: 'home', component: HomeComponent },
   {  path: 'citas', component: CitasComponent },
   {  path: 'personas', component: PersonasComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 
   {
     path: '**', redirectTo: 'home'  // si no se encuentra la ruta se redirecciona a la ruta principal
