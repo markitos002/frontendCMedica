@@ -24,8 +24,7 @@ import { CitasComponent } from './pages/citas/citas.component';
 
 
 import { PersonasService} from './pages/personas/service/personas.service';
-import { CitasService} from './pages/citas/service/citas.service';
-import { LoginComponent } from './pages/login/login.component'; // se importa el servicio
+import { CitasService} from './pages/citas/service/citas.service'; // se importa el servicio
 
 
 @NgModule({
@@ -35,7 +34,6 @@ import { LoginComponent } from './pages/login/login.component'; // se importa el
     HomeComponent,
     PersonasComponent,
     CitasComponent,
-    LoginComponent,
 
 
   ],
